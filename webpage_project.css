@@ -1,0 +1,158 @@
+
+* {
+    box-sizing: border-box;
+}
+
+.column {
+    float: left;
+    width: 25%;
+    cursor: pointer;
+    border: 1px solid #858685;
+    box-sizing: border-box;
+}
+
+ div .column img:hover{
+  background-color: #E0E4E0;
+}
+
+
+/* Clearfix (clear floats) */
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+img
+{
+  border: solid 1px white;
+
+  padding:20px;
+  
+}
+
+h1{
+ 
+  font-style: bold;
+  font-family: Times New Roman;
+   color: #124508;
+}
+h4{
+    font-style: italic;
+  font-family: Times New Roman;
+   color: #124508;
+   font-size: 25px;
+
+
+}
+/*p{
+  font-size: 40px; 
+  font-family: cursive; 
+  color: #082A67;
+}
+form{
+  color: coral;
+  font-style: bold;
+  font-size: 15px;
+
+}
+*/
+input[type=text],select,textarea
+{
+  width:auto;
+  height:auto;
+  font-style:italic;
+  font-size: 15px;
+  box-sizing: border-box;
+  padding: 5px;
+  width: 100%;
+  border:solid 2px #ffffcc;
+
+}
+
+
+input[type=submit]
+{
+  color:black;
+  width: auto;
+  height:auto;
+  background-color: #66ccff;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+
+/*css for navigation bar*/
+     .container-fluid ul{
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #333;
+
+    }
+    .container-fluid li{
+      float: left;
+      padding: 10px;
+      border-right: 1px solid white;
+      
+      
+    }
+    .container-fluid li a{
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+
+    }
+
+    .container-fluid li a:hover{
+      background-color: #111; 
+    }
+
+#areatab table {
+    border-spacing: 0px;
+}
+ #areatab th{
+  background-color: Lavender;
+  text-align: center;
+  font-size: 25px;
+
+}
+#areatab h2{
+  
+  color:#ff8000;
+  font-style: italic;
+  font-size: 20px;
+  font-family: cursive;
+  text-align: left;
+}
+
+
+
+/*css for tables*/
+.tab table {
+    border: 1px solid black;
+    
+}
+.tab th
+ {
+    padding: 5px;
+    text-align: left; 
+
+}
+.tab td{
+  text-align: right;
+}
+.tab #heading{
+  font-size: 25px;
+  font-family: cursive;
+  font-style: bold;
+  color:#082A67;
+
+}
+.tab #data{
+  text-align: left;
+
+}

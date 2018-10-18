@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Frozen Ribbons Chain Creator</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="webpage_project.css">
+<style>
+#tabl {
+    border-collapse: separate;
+    border-spacing: 15px;
+}
+table, th, td {
+    border: 1px solid Lavender;
+    padding: 2px;
+   height:"100%";
+    
+}
+
+.h{
+  background-color: #f1f1f1;
+  width: 15%;
+  height: auto;
+}
+
+.header {
+  overflow: hidden;
+  background-color: #f1f1f1;
+  padding: 20px 10px;
+  height:250px;
+}
+
+.header a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px; 
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+
+
+.header a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.header a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+.header-right {
+  float: right;
+}
+
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .header-right {
+    float: none;
+  }
+}
+A {text-decoration: none;} 
+  table, th, td {
+    border: 1px solid Lavender;
+   padding:2px;
+   height:"100%";
+    
+}
+
+/*from here*/
+
+/*css for sidenavbar*/
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+/*css for buttons*/
+
+.button {
+  border-radius: 4px;
+  background-color: lavender;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.dropbtn {
+    background-color: #3498DB;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #2980B9;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
+
+
+.dropbtnrt {
+    background-color:#3498DB;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtnrt:hover, .dropbtnrt:focus {
+    background-color: #3e8e41;
+}
+
+.dropdownrt {
+    /*float: right;*/
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-contentrt {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    right: 0;
+    z-index: 1;
+}
+
+.dropdown-contentrt a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdownrt a:hover {background-color: #ddd;}
+
+.show {display: block;}
+
+.dropbtn {
+    background-color: grey;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+
+</style>
+</head>
+
+
+<div class="header">
+<div>
+<img  class="logo" src="chain2.png" width="350px" height="150px" border="none">
+
+ <strong><font color="SaddleBrown" ><h1 style="font-family: Georgia;font-size: 30px;font-style: bold; float: right;">
+CHAIN CREATOR</h1></font></div></strong>
+<br><br>
+  <div class="header-right">
+    
+    <a  href="franchiseinsights.html">Franchise Insights</a>
+    <a href="news.html">News</a>
+    <a href="prolav.html">Videos</a>
+    <a href="https://www.businessex.com/">BusinessEx</a>
+    <a href = "https://www.licenseindia.com/">Lisencse India</a>
+     <a href="register.html ">Register</a>
+    <a href="login.html">Log in</a>
+   
+    <a href = "subscribe.html">Subscribe</a></div></div>
+</tr>
+
+<hr>
+
+<body style="height:1500px">
+  <nav class="navbar navbar-inverse">
+  
+    <ul class="nav navbar-nav">
+      
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Open <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+       <li>   <a href="automotive.html ">Automotive</a></li>
+  <li><a href=" beauty.html">Beauty and health</a></li>
+  <li><a href="business.html ">Business services</a></li>
+  <li><a href="dealors.html">Dealors and distributors</a></li>
+  <li><a href="education.html">Education</a></li>
+  <li><a href=" fashion.html">Fashion</a></li>
+  <li><a href="food.html">Food and beverage</a></li>
+  
+  <li><a href="home.html">Home based Businesses</a></li>
+  <li><a href="hotels.html ">Hotel,travel&tourism</a></li>
+  <li><a href="industry.html ">Industrial machinery</a></li>
+  <li><a href="retail.html ">Retail</a></li>
+  <li><a href="sports.html">Sports,Fitness amd Entertainment</a></li>
+        </ul>
+      </li>
+      <li><a href="#business">BUSINESS</a></li>
+      <li><a href="#investment" >INVESTMENT</a></li>
+      <li><a href="#property">PROPERTY</a></li>
+      <li><a href="#training">TRAINING</a></li>
+      <li><a href="#agree">AGREEMENT DETAILS</a></li>
+</ul>
+    <ul class="nav navbar-nav navbar-right">
+  <form action="form.html">
+      <button type="submit" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">VIEW CONTACT</button>
+  </form>  
+</ul>
+    </ul>
+  
+  </div>
+</nav>
+
+
+<br><br><br>
+<table cellspacing="10" cellpadding="10">
+  <tr>
+<td>
+    <th ><img src="frozenrobbins.gif" ></th></td>
+<td>
+
+<h1>FROZEN RIBBONS Shaved Ice Cream</h1>
+<h3>Ice Creams & Yogurt Parlors</h3>
+</td>
+
+
+  </tr>
+</table>
+<br><br>
+
+<!-- tab -->
+<center>
+  <table style="width:80% ;bg-color:grey" id="areatab">
+  <tr>
+    <th>AREA REQ<br>1100 - 1500 Sq.ft</th>
+    <th>INVESTMENT RANGE<br>INR 20 Lac - 30 Lac</th> 
+    <th>FRANCHISE OUTLETS<br>Less than 10</th>
+  </tr>
+ 
+</table>
+  
+</center>
+
+<br><br>
+
+
+<!-- content -->
+<div style="border:1px solid Lavender;width:75%;height:500px;overflow:scroll;overflow-y:scroll;overflow-x:hidden;">
+<p id="bus" ><a name="business" style="font-size: 30px; font-family: cursive; color: #082A67">BUSINESS DETAILS<hr></a>
+<h4><b>About Us:</b></h4><br>
+
+<h4><center>FROZEN RIBBONS are creamy ribbons of paper thin Ice-Cream.<br>
+Awarded <b>'THE BEST FROZEN TREAT CONCEPT'</b> at the <b>Times Retail Icons 2017</b></h4></center>
+
+Inspired by a unique Taiwanese shaved Ice dessert concept and carefully crafted recipes from around the globe, each of our<b> FROZEN RIBBONS</b> servings is shaved into yummy, sweet and creamy ribbons of Ice-Cream. Each of these signatures are frozen into cylindrical blocks and then shaved into paper thin icy ribbons to order from custom made machines. These delicate ribbons are then topped with a variety of nuts, syrups, fresh fruits and ingredients to choose from.<br>
+
+<b><h4>Promoters: FRICE ICE CREAMS LLC.</h4></b><br>
+
+We own and operate about 10 franchise partners in the United Arab Emirates and the Kingdom of Morocco. With more than twenty years of management experience in the Food and Beverage industry, we serve our delighted customers and support our franchises with great marketing efforts, products we are proud to serve with a whole lot of fun. We welcome ideas and suggestions and always look to enhance our business model to include many more innovative food cart and kiosks concepts. We always work hard to serve delicious and affordable treats from our carts and kiosks concepts at any location of your choice and cater to a wide variety of events from small private parties to large corporate events, grand openings, school/college carnivals, wedding celebrations & happy occasions.<br>
+
+<b>Rohit Kakde</b>, Founder, Chairman and Managing Partner, owns and operates few F&B brands in India, United Arab Emirates and the Kingdom of Morocco. Rohit Kakde, a serial entrepreneur has more than 20 years of experience in establishing various business models and has previously worked in senior management roles in various companies across all industries. Rohit Kakde operates out of his Dubai office and has tremendous support from his wife Sanaa Kakde who handles the Sales and Marketing and his Business Investor Partners Syed Muhammad Ali Al Hussaini, Syed Mustafa Al Hussaini and Mir Raoofuddin Ali Khan and are currently working on launching a few unique brands and concepts.<br>
+
+<b><h4>FROZEN RIBBONS FRANCHISE MODULES:</h4></b>
+
+<h4><b>1. FULL SIZE SHOP (800 - 1200 Sq.Ft.)</b></h4>
+
+FROZEN RIBBONS full size shops are exclusively designed to cater our signature creations to our customers for an ultimate experience of our frozen delights. These shops offer our best selection of the menu offerings along with the comfort of the foggy ambience and our glow furniture, making it a must visit place for families and friends to connect with our brand. <br>
+
+<h4><b>2. FULL SIZE SHOP WITH MANUFACTURING & SUPPLY (1200 - 1500 Sq.Ft.)</b></h4>
+
+Along with the above mentioned features of the full size shop, this option will showcase a full size kitchen with our state-of-the-art Ice-Cream manufacturing unit and will be responsible for the 'in-house' manufacturing and also supply of our signature offerings to self and other units in the region.<br>
+
+<h4><b>3. KIOSK (100 - 200 Sq.Ft.) </b></h4>
+
+If you are looking to open an ice cream store, but don't want to pay ridiculous high set-up costs, FROZEN RIBBONS complete kiosk program is for you. Taking our kiosk offers a lot more benefits as in a low start up cost, where you get a branded outlet with all facilities of a retail outlet. The hazard of skyrocketing rentals can be saved by taking a kiosk as it does not need much space and can be set up near high foot fall areas. In addition to low rent the kiosk is a small space that has low inventory. This keeps the running cost quite low as well and a easy option to move locations.<br>
+
+<h4><b>4. CARTS/VANS:</b></h4>
+
+This format offers you to go where the customers are with low investments, low overheads and high returns on your investment. This unique concept is on wheels so the investment is fixed with no hidden expenses. With unlimited customers and flexible business hours and the unique concept on wheels, its fun all the way. A quick and an efficient product delivery system added to a eye catching cart/van to attract customers and serve popular product offerings.<br>
+
+With 20 years of experience, we provide you with everything you need to open an Ice Cream cart/kiosk/stores with direct store delivery, marketing, operations, training & policy manuals. Our affordable & attractive menu draws customers making it an exciting experience for all ages.<br>
+
+<b><h4>FROZEN RIBBONS FRANCHISE TYPE:</h4></b>
+
+1. SINGLE UNIT FRANCHISE: (1 UNIT FRANCHISE)<br>
+
+2. AREA DEVELOPER: (5 UNITS OVER AN AGREED DEVELOPEMENT SCHEDULE)<br>
+
+ 
+
+“<b>The FROZEN RIBBONS</b> is a unique and an exciting experience. Throughout the development of this amazing and an unique concept, special components and features were induced and developed for an ultimate experience! WELCOME TO THE FROZEN RIBBONS FAMILY, COME LET'S SHAVE 'EM NOW !!!! - Rohit Kakde”<br>
+
+
+</p>
+</div>
+
+
+<br><br>
+<div class="tab">
+  <a name="investment"></a>
+<table style="width:75%" cellpadding="5" cellspacing="10" >
+  <tr>
+    <th colspan="2" id="heading" ><b>INVESTMENT DETAILS<hr></b></th>
+  </tr>
+
+  <tr>
+    <th colspan="2" style="font-size: 25px;background-color:#E2ECFE;"><strong>Commenced Operations</strong></th>
+  </tr>
+  <tr>
+    <th >Franchising / Distribution Commenced On</th>
+
+    <td>2017</td>
+  </tr>
+  <tr>
+    <th >Operations Commenced On</th>
+    <td>2018</td>
+
+  </tr>
+  <tr>
+    <th >Preferred location of unit franchise outlet</th>
+    <td>Main Markets, Malls, High streets, & Food Courts</td>
+  </tr>
+    <tr>
+    <th colspan="2" style="font-size: 25px;background-color:#E2ECFE;"><strong>Franchise Details</strong></th>
+  </tr>
+  <tr>
+    <th >Exclusive territorial rights to a unit franchise </th>
+    <td>Yes</td>
+
+  </tr>
+  <tr>
+    <th >Anticipated percentage return on investment </th>
+    <td>50%</td>
+
+  </tr>
+
+  <tr>
+    <th >Likely pay back period of capital for a unit franchise</th>
+    <td>1-2 Years</td>
+  </tr>
+    <tr>
+    <th >Other investment requirements </th>
+    <td>Working Capital</td>
+
+  </tr>
+
+  
+    <tr>
+    
+  <table style="width: 75%;" cellspacing="10" cellpadding="5" id="t1">
+  <tr >
+    <th colspan="2" style="font-size: 25px;"><strong>Units</strong></th>
+  </tr>
+  <tr>
+    <th >Investment</th>
+    <td>INR 20lac - 30lac </td>
+  </tr>
+    <tr>
+    <th >Franchise/Brand Fee</th>
+    <td>INR 340000</td>
+  </tr>
+    <tr>
+    <th >Royalty/Commission</th>
+    <td>7 %</td>
+  </tr>
+ </table>
+  </center>
+</tr>
+<table style="width: 75%;" cellspacing="10" cellpadding="5" id="t1">
+  <tr >
+    <th  style="font-size: 20px;"><strong>Expansion Locations</strong></th>
+  </tr>
+ 
+<tr>
+  <td>
+  <table style="width:200px;height: 200px" >
+  <tr style="background-color:#E2ECFE">
+    <th  style="font-size: 20px;"><strong>NORTH</strong></th>
+  </tr>
+  <tr>
+    <td id="data">Delhi, Haryana, Himachal Pradesh, Jammu and Kashmir, Punjab, Uttaranchal, Uttar Pradesh</td> 
+  </tr>
+</table>
+</td>
+<td>
+<table style="width:200px;height: 200px" >
+  <tr style="background-color:#E2ECFE">
+    <th  style="font-size: 20px;"><strong>SOUTH</strong></th>
+  </tr>
+  <tr>
+    <td id="data">Kerala, Karnataka, Tamil Nadu, Andhra Pradesh, Telangana</td> 
+</tr>
+
+</table>
+</td>
+<td>
+<table style="width:200px;height: 200px" >
+  <tr style="background-color:#E2ECFE">
+    <th style="font-size: 20px;"><strong>EAST</strong></th>
+  </tr>
+<tr>
+    <td id="data">Assam, Meghalaya, Mizoram, Tripura, Arunachal Pradesh, Manipur, Nagaland, Odisha</td> 
+</tr>
+</table>
+</td>
+
+</tr>
+<tr>
+  <td>
+  <table style="width:200px;height: 200px" >
+  <tr style="background-color:#E2ECFE">
+    <th style="font-size: 20px;"><strong>WEST</strong></th>
+  </tr>
+  <tr>
+    <td id="data">Gujarat, Rajasthan, Maharashtra, Goa</td> 
+  </tr>
+</table>
+</td>
+<td>
+<table style="width:200px;height: 200px">
+  <tr style="background-color:#E2ECFE">
+    <th  style="font-size: 20px;"><strong>CENTRAL</strong></th>
+  </tr>
+  <tr>
+    <td id="data">Chhattisgarh, Madhya Pradesh, Bihar, Jharkhand</td> 
+</tr>
+</table>
+</td>
+<td>
+<table style="width:200px;height: 200px" >
+  <tr style="background-color:#E2ECFE">
+    <th style="font-size: 20px;"><strong>UNION TERRITORIES</strong></th>
+  </tr>
+<tr>
+    <td id="data">Andaman & Nicobar, Pondicherry, Chandigarh, Lakshadweep, Daman and Diu</td> 
+</tr>
+
+</td>
+
+</tr>
+</table>
+
+</table>
+</center>
+
+<br><br>
+ <a name="property"></a>
+    <table style="width:75%" cellpadding="5" cellspacing="5">
+  <tr>
+    <th colspan="2" id="heading"><b>PROPERTY DETAILS</b><hr></th>
+    
+  </tr>
+  <tr>
+    <th >Type of property required for this franchise opportunity</th>
+    <td>Commercial</td>
+  </tr>
+  <tr>
+    <th >Floor area requirement</th>
+    <td>1000 Sq.ft</td>
+
+  </tr>
+  <tr>
+    <th >Preferred location of unit franchise outlet</th>
+    <td>Good potential market with relevant brands around</td>
+  </tr>
+</table>
+
+  <br><br>
+   <a name="training"></a>
+  <table style="width:75%" cellpadding="5" cellspacing="5">
+  <tr>
+    <th colspan="2" id="heading"><b>TRAINING DETAILS</b><hr></th>
+    
+  </tr>
+  <tr>
+    <th >Detailed operating manuals for franchisees 
+
+</th>
+    <td>Both</td>
+  </tr>
+  <tr>
+    <th >Is field assistance available for franchisee ? </th>
+    <td>Yes</td>
+  </tr>
+  <tr>
+    <th >
+Expert guidance from Head Office to franchisee in opening the franchise</th>
+    <td>Yes</td>
+  </tr>
+    <tr>
+    <th >Current IT systems will be included in the franchise</th>
+    <td>Yes</td>
+  </tr>
+
+</table>
+<br><br>
+ <a name="agree"></a>
+<table style="width:75%" cellpadding="5" cellspacing="5">
+  <tr>
+    <th colspan="2" id="heading"><b>AGREEMENT & TERM DETAILS</b><hr></th>
+    
+  </tr>
+  <tr>
+    <th >Do you have a standard franchise agreement?</th>
+    <td>Yes</td>
+  </tr>
+  <tr>
+    <th >How long is the franchise term for?</th>
+    <td>LifeTime years</td>
+  </tr>
+  <tr>
+    <th >Is the term renewable?</th>
+    <td>Yes</td>
+  </tr>
+
+</table>
+
+</div>
+<center>
+  <table>
+    <tr>
+      <th style="padding: 20px">
+<div class="dropdown">
+  <button class="dropbtn" style="width: 200px">Browse by location</button>
+  <div class="dropdown-content">
+    <a class="active" href="https://www.franchiseindia.com/business-opportunities/maharashtra.LOC18">Maharasthra</a></li>
+  <a href="https://www.franchiseindia.com/business-opportunities/delhi.LOC23">Delhi</a></li>
+  <a href="https://www.franchiseindia.com/business-opportunities/karnataka.LOC14">Karnataka</a></li>
+  <a href="https://www.franchiseindia.com/business-opportunities/tamilnadu.LOC29">Tamil Nadu</a></li>
+  <a href="https://www.franchiseindia.com/business-opportunities/west-bengal.LOC33">West Bengal</a></li>
+  <a href="https://www.franchiseindia.com/business-opportunities/gujarat.LOC9">Gujarat</a></li>
+  <a href="https://www.franchiseindia.com/business-opportunities/uttar-pradesh.LOC32">Uttar Pradesh</a></li>
+  <a href="https://www.franchiseindia.com/business-opportunities/madhya-pradesh.LOC17">Madhya Pradesh</a></li>
+ <a href="https://www.franchiseindia.com/business-opportunities/haryana.LOC10">Haryana</a></li>
+<a href="https://www.franchiseindia.com/business-opportunities/rajasthan.LOC27">Rajasthan</a></li>
+<a href="https://www.franchiseindia.com/business-opportunities/andhra-pradesh.LOC1">Andhra Pradesh</a></li>
+<a href="https://www.franchiseindia.com/business-opportunities/kerala.LOC15">Kerala</a></li>
+<a href="https://www.franchiseindia.com/business-opportunities/punjab.LOC26">Punjab</a></li>
+<a href="https://www.franchiseindia.com/business-opportunities/chandigarh.LOC5">Chandigarh</a></li>
+  </div>
+</div>
+</th>
+<br><br>
+<th style="padding: 20px" >
+<div class="dropdown">
+  <button class="dropbtn" style="width: 200px">Our group sites</button>
+  <div class="dropdown-content">
+    <a class="active" href="https://www.entrepreneur.com/">entreprenuer.com</a></li>
+  <a href="https://www.menshealthindia.com/">menshealthindia.com</a></li>
+  <a href="https://www.indianretailer.com/">indianretailer.com</a></li>
+  <a href="https://www.franchiseindia.com/restaurant/">restaurantindia.in</a></li>
+  <a href="https://www.franchiseindia.com/wellness/">wellnessindia.com</a></li>
+  <a href="https://www.franchiseindia.com/education/">educationbiz.com</a></li>
+  <a href="https://www.franchise.ae/">franchise.ae</a></li>
+  <a href="https://www.franchisebangladesh.com/">franchisebangladesh.com</a></li>
+ <a href="https://www.businessex.com/">businessex.com</a></li>
+<a href="https://www.licenseindia.com/">licenseindia.com</a></li>
+<a href="https://www.bradfordlicenseindia.com/">bradfordlicenseindia.com</a></li>
+<a href="https://www.franchiseindia.net/">franchiseindia.net</a></li>
+<a href="https://www.franchiseindia.in/">franchiseindia.in</a></li>
+<a href="https://www.francorp.in/">francorp.in</a></li>
+<a href="https://www.franglobal.com/">franglobal.com</a></li>
+<a href="http://www.franchiseindiaventures.com/">franchiseindiaventures.com</a></li>
+<a href="https://www.gauravmarya.com/">gauravmarya.com</a></li>
+  </div>
+</div>
+</th>
+</tr>
+</table>
+</center>
+<br><br>
+<h2>Social Sites</h2><br>
+<center>
+<div id="social">
+  
+  
+  <a target="body" href="https://twitter.com/FranchiseIndia">
+    <img src="t.jpg" alt="image not found" width="200px">
+  </a>
+  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  <a target="body" href="https://www.facebook.com/FranchiseIndiaNews">
+    <img src="fb.jpg" alt="image not found" width="200px">
+  </a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  <a target="body" href="https://www.linkedin.com/company/franchise-india-holdings-limited?trk=tyah">
+    <img src="link.jpg" alt="image not found" width="200px">
+  </a>
+  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  <a target="body" href="https://www.youtube.com/user/FranchiseIndia">
+    <img src="youtube.jpg" alt="image not found" width="200px">
+
+  </a>
+</div>
+</center>
+<!-- for buttons -->
+
+<br><br>
+<center>
+ <button class="button"><a class="active" href=""><span>Home</span></a></button>
+  <button class="button"><a href="aboutus.html"><span>About Us</span></a></button>
+  <button class="button"><a href="contactus.html"><span>Contact</span></a></button>
+  <button class="button"><a href="feedback.html"><span>Feedback</span></a></button><br>
+  <button class="button"><a href="news.html"><span>News</span></a></button>
+  <button class="button"><a href="testinomials.html"><span>Testinomials</span></a></button>
+  <button class="button"><a href="terms.html"><span>Terms</span></a></button>
+ <button class="button"><a href="https://www.franchiseindia.com/sitemap"><span>Sitemap</span></a></button>
+</center>
+
+</footer>
+
+
+</body>
+</html>
+

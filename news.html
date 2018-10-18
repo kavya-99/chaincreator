@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>news chain creator</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+.h{
+  background-color: #f1f1f1;
+  width: 15%;
+  height: auto;
+}
+
+.header {
+  overflow: hidden;
+  background-color: #f1f1f1;
+  padding: 20px 10px;
+  height:250px;
+}
+
+.header a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px; 
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+
+
+.header a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.header a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+.header-right {
+  float: right;
+}
+
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .header-right {
+    float: none;
+  }
+}
+A {text-decoration: none;} 
+  table, th, td {
+    border: 1px solid Lavender;
+   padding:2px;
+   height:"100%";
+    
+}
+
+/*from here*/
+
+/*css for sidenavbar*/
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+/*css for buttons*/
+
+.button {
+  border-radius: 4px;
+  background-color: lavender;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.dropbtn {
+    background-color: #3498DB;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #2980B9;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
+
+
+.dropbtnrt {
+    background-color:#3498DB;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtnrt:hover, .dropbtnrt:focus {
+    background-color: #3e8e41;
+}
+
+.dropdownrt {
+    /*float: right;*/
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-contentrt {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    right: 0;
+    z-index: 1;
+}
+
+.dropdown-contentrt a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdownrt a:hover {background-color: #ddd;}
+
+.show {display: block;}
+
+.dropbtn {
+    background-color: grey;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+
+    .carousel-inner img {
+      width: 100%; /* Set width to 100% */
+      min-height: 200px;
+    }
+    h1{
+      font-family: times new roman;
+      font-size: 80px;
+    }
+
+    /* Hide the carousel text when the screen is less than 600 pixels wide */
+    @media (max-width: 600px) {
+      .carousel-caption {
+        display: none; 
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+<div>
+<img  class="logo" src="chain2.png" width="350px" height="150px" border="none">
+
+ <strong><font color="SaddleBrown" ><h1 style="font-family: Georgia;font-size: 30px;font-style: bold; float: right;">
+CHAIN CREATOR</h1></font></div></strong>
+<br><br>
+  <div class="header-right">
+    
+    <a  href="franchiseinsights.html">Franchise Insights</a>
+    <a href="news.html">News</a>
+    <a href="prolav.html">Videos</a>
+    <a href="https://www.businessex.com/">BusinessEx</a>
+    <a href = "https://www.licenseindia.com/">Lisencse India</a>
+     <a href="register.html ">Register</a>
+    <a href="login.html">Log in</a>
+   
+    <a href = "subscribe.html">Subscribe</a></div></div>
+</tr>
+
+
+
+<center>
+<h1 style="font-family: times new roman">NEWS</h1>
+</center>  <br>
+  
+  <div class="container">
+<div class="row">
+  <div class="col-sm-8">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <img src="https://www.franchiseindia.com//uploads/news/wi/5bb4afe776e4d.jpeg" alt="Image">
+          <div class="carousel-caption">
+            <h3 style="color: black;">Indian Earth Brings Variety Of Healthy Seeds</h3>
+          </div>      
+        </div>
+
+        <div class="item">
+          <img src="https://www.franchiseindia.com/uploads/news/ri/5bb461602c7a9.jpeg" alt="Image">
+          <div class="carousel-caption">
+            <h3>Swiggy expands into B2B segment</h3>
+          </div>      
+        </div>
+      </div>
+
+      <!-- Left and right controls -->
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+
+
+
+<div class="container">
+<div class="row">
+  
+  <div class="col-sm-4">
+    <div class="well">
+    <h4>MOST POPULAR</h4>
+    </div>
+    <div class="well">
+      <a href="https://news.franchiseindia.com/content/inifd-will-open-more-than-300-franchise-centers-in-next-2-yrs.n16757"><p>INIFD Eyes Expansion</p></a>
+    </div>
+    
+    <div class="well">
+     <a href="https://news.franchiseindia.com/content/frazer-and-haws-presents-decorative-serving-platters-trays-in-silver.n16756"><p>Frazer and Haws Brings New Collection</p></a>
+    </div>
+    <div class="well">
+      <a href="https://news.franchiseindia.com/wellness/ipca-labs-arm-acquires-majority-stake-in-bayshore-pharmaceuticals-for-1028-mn.n16755"
+    ><p>Ipca Labs Buys 80% stake in Bayshore</p></a>
+    </div>
+    <div class="well">
+       <a href="https://news.franchiseindia.com/wellness/dr-reddys-labs-sells-cloderm-cream-franchise-to-epi-health.n16754"><p>Dr Reddy's sell the rights of Cloderm Cream</p>
+    </div>
+    <div class="well">
+       <a href="https://news.franchiseindia.com/wellness/advanced-laparoscopic-surgery-training-centre-opens-in-aiims-bhubaneswar.n16753"><p>Odisha gets Laparoscopic Surgery Centre</p>
+    </div>
+  </div>
+</div>
+<hr>
+</div>
+
+<div class="container text-center">    
+  <br>
+  <div class="row">
+    <div class="col-sm-3">
+      <img src="https://www.franchiseindia.com/uploads/news/edu/5bb481ca6fecc.jpeg" class="img-responsive" style="width:100%" alt="Image">
+      <p>Delhi HC upholds MCI's regulation </p>
+    </div>
+    <div class="col-sm-3"> 
+      <img src="https://www.franchiseindia.com/uploads/news/edu/5bb472d9bfb3a.jpeg" class="img-responsive" style="width:100%" alt="Image">
+      <p>ITDA Launches "Hanging Libraries"</p>    
+    </div>
+    <div class="col-sm-3">
+      <img src="https://www.franchiseindia.com/uploads/news/edu/5bb46e23c091e.jpeg" class="img-responsive" style="width:100%" alt="Image">
+      <p>JGBA Partners with UNSW</p>
+    </div>
+    <div class="col-sm-3"> 
+      <img src="https://www.franchiseindia.com/uploads/news/ri/5bb468df8c06d.jpeg" class="img-responsive" style="width:100%" alt="Image">
+      <p>PepsiCo returns to Sales Growth</p>    
+    </div>
+    
+    <div class="col-sm-3">
+      <img src="https://www.franchiseindia.com/uploads/news/ri/5bb45bc4d6590.jpeg" class="img-responsive" style="width:100%" alt="Image">
+      <p>Tata Starbucks hires new CEO</p>
+    </div>
+    <div class="col-sm-3"> 
+      <img src="https://www.franchiseindia.com/uploads/news/wi/5bb21311e1dbd.jpeg" class="img-responsive" style="width:100%" alt="Image">
+      <p>B&WSSC inks pact with CIDESCO</p>    
+    </div>
+    <div class="col-sm-3">
+      <img src="https://www.franchiseindia.com/uploads/news/edu/5bb20d4cf2157.jpeg" class="img-responsive" style="width:100%" alt="Image">
+      <p>AICTE to form Teacher Training Academics</p>
+    </div>
+    <div class="col-sm-3"> 
+      <img src="https://www.franchiseindia.com/uploads/news/fi/5bb1fe5db72ea.jpeg" class="img-responsive" style="width:100%" alt="Image">
+      <p>Faber brings first 3D Chimney</p>    
+    </div>
+  </div>
+  <hr>
+</div>
+<center>
+  <table style="float: right;">
+    <tr>
+      <th style="padding: 20px">
+<div class="dropdown">
+  <button class="dropbtn" style="width: 200px">Browse by location</button>
+  <div class="dropdown-content">
+    <a class="active" href="https://www.franchiseindia.com/business-opportunities/maharashtra.LOC18">Maharasthra</a></li>
+  <a href="https://www.franchiseindia.com/business-opportunities/delhi.LOC23">Delhi</a></li>
+  <a href="https://www.franchiseindia.com/business-opportunities/karnataka.LOC14">Karnataka</a></li>
+  <a href="https://www.franchiseindia.com/business-opportunities/tamilnadu.LOC29">Tamil Nadu</a></li>
+  <a href="https://www.franchiseindia.com/business-opportunities/west-bengal.LOC33">West Bengal</a></li>
+  <a href="https://www.franchiseindia.com/business-opportunities/gujarat.LOC9">Gujarat</a></li>
+  <a href="https://www.franchiseindia.com/business-opportunities/uttar-pradesh.LOC32">Uttar Pradesh</a></li>
+  <a href="https://www.franchiseindia.com/business-opportunities/madhya-pradesh.LOC17">Madhya Pradesh</a></li>
+ <a href="https://www.franchiseindia.com/business-opportunities/haryana.LOC10">Haryana</a></li>
+<a href="https://www.franchiseindia.com/business-opportunities/rajasthan.LOC27">Rajasthan</a></li>
+<a href="https://www.franchiseindia.com/business-opportunities/andhra-pradesh.LOC1">Andhra Pradesh</a></li>
+<a href="https://www.franchiseindia.com/business-opportunities/kerala.LOC15">Kerala</a></li>
+<a href="https://www.franchiseindia.com/business-opportunities/punjab.LOC26">Punjab</a></li>
+<a href="https://www.franchiseindia.com/business-opportunities/chandigarh.LOC5">Chandigarh</a></li>
+  </div>
+</div>
+</th>
+<br>
+<th style="padding: 20px" >
+<div class="dropdown">
+  <button class="dropbtn" style="width: 200px">Our group sites</button>
+  <div class="dropdown-content">
+    <a class="active" href="https://www.entrepreneur.com/">entreprenuer.com</a></li>
+  <a href="https://www.menshealthindia.com/">menshealthindia.com</a></li>
+  <a href="https://www.indianretailer.com/">indianretailer.com</a></li>
+  <a href="https://www.franchiseindia.com/restaurant/">restaurantindia.in</a></li>
+  <a href="https://www.franchiseindia.com/wellness/">wellnessindia.com</a></li>
+  <a href="https://www.franchiseindia.com/education/">educationbiz.com</a></li>
+  <a href="https://www.franchise.ae/">franchise.ae</a></li>
+  <a href="https://www.franchisebangladesh.com/">franchisebangladesh.com</a></li>
+ <a href="https://www.businessex.com/">businessex.com</a></li>
+<a href="https://www.licenseindia.com/">licenseindia.com</a></li>
+<a href="https://www.bradfordlicenseindia.com/">bradfordlicenseindia.com</a></li>
+<a href="https://www.franchiseindia.net/">franchiseindia.net</a></li>
+<a href="https://www.franchiseindia.in/">franchiseindia.in</a></li>
+<a href="https://www.francorp.in/">francorp.in</a></li>
+<a href="https://www.franglobal.com/">franglobal.com</a></li>
+<a href="http://www.franchiseindiaventures.com/">franchiseindiaventures.com</a></li>
+<a href="https://www.gauravmarya.com/">gauravmarya.com</a></li>
+  </div>
+</div>
+</th>
+</tr>
+</table>
+</center>
+<br>
+<h1 style="font-family: times;font-size: 40px;">SOCIAL SITES</h1><br>
+<center>
+<div id="social">
+  
+  
+  <a target="body" href="https://twitter.com/FranchiseIndia">
+    <img src="t.jpg" alt="image not found" width="200px">
+  </a>
+  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  <a target="body" href="https://www.facebook.com/FranchiseIndiaNews">
+    <img src="fb.jpg" alt="image not found" width="200px">
+  </a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  <a target="body" href="https://www.linkedin.com/company/franchise-india-holdings-limited?trk=tyah">
+    <img src="link.jpg" alt="image not found" width="200px">
+  </a>
+  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  <a target="body" href="https://www.youtube.com/user/FranchiseIndia">
+    <img src="youtube.jpg" alt="image not found" width="200px">
+
+  </a>
+</div>
+</center>
+<!-- for buttons -->
+
+<br>
+<center>
+ <button class="button"><a class="active" href=""><span>Home</span></a></button>
+  <button class="button"><a href="aboutus.html"><span>About Us</span></a></button>
+  <button class="button"><a href="contactus.html"><span>Contact</span></a></button>
+  <button class="button"><a href="feedback.html"><span>Feedback</span></a></button><br>
+  <button class="button"><a href="news.html"><span>News</span></a></button>
+  <button class="button"><a href="testinomials.html"><span>Testinomials</span></a></button>
+  <button class="button"><a href="terms.html"><span>Terms</span></a></button>
+ <button class="button"><a href="https://www.franchiseindia.com/sitemap"><span>Sitemap</span></a></button>
+</center>
+
+</footer>
+
+
+</body>
+</html>
+
+

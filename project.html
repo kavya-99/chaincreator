@@ -1,0 +1,547 @@
+<html>
+<head>
+<script>
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("myBtn").style.display = "block";
+    } else {
+        document.getElementById("myBtn").style.display = "none";
+    }
+}
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+function openForm() {
+    document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+}
+
+</script>
+<style>
+
+
+
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+/* The popup chat - hidden by default */
+.chat-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width textarea */
+.form-container textarea {
+  width: 100%;
+  padding: 20px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+  resize: none;
+  min-height: 200px;
+}
+
+/* When the textarea gets focus, do something */
+.form-container textarea:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/send button */
+.form-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+h1{
+    font-family: purisa;
+    color:brown;    
+}
+h3{
+   font-family: arial;
+   
+   text-align: left;
+}
+h4{
+   font-family: arial;
+   color: grey;
+   text-align: left;
+}
+h5{
+   font-family: arial;
+   
+   text-align: right;
+}
+ul {
+    list-style-type: none;
+    margin: 450px;
+    padding: 0px;
+    
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: grey;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 80px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
+.email{
+
+      text-align:right;
+      position: absolute;
+      bottom:-2000;
+      right: 0;
+padding:10px;
+}
+.gallery{
+
+      text-align:right;
+      position: absolute;
+      bottom:-2950;
+      right: 0;
+padding:30px;
+}
+
+.gallery1{
+
+      text-align:left;
+      position: absolute;
+      bottom:-1600;
+      left: 0;
+padding:30px;
+}
+.gallery2{
+      
+      text-align:left;
+      position: absolute;
+      bottom:-2900;
+      left: 0;
+padding:30px;
+}
+a{
+text-decoration:none;
+}
+
+a email{
+    
+    background-color: white;
+    color: red;
+    padding: 15px 20px;
+    border: 2px solid #f44336;
+    cursor: pointer;
+    width: 10%;
+    opacity: 0.9;
+    align:center;
+    text-decoration:none;
+   
+}
+
+a:hover {
+    opacity: 1;
+    background-color:red;
+
+}
+
+div.gallery3 {
+    margin: 3px;
+    border: 1px solid green;
+    float: left;
+    width: 200px;
+   color:black;
+}
+
+div.gallery3:hover {
+    border: 1px solid yellow;
+}
+
+div.gallery3 img {
+    width: 100%;
+    height: 20%;
+}
+.top-left {
+    position: relative;
+    top: 0px;
+    left: 16px;
+}
+.dropdown {
+    position: relative;
+    color:blue;
+    
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+    color:black;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+</style>
+</head>
+<body>
+
+<h2>FRANCHISE INSIGHTS</h2>
+<hr>
+
+<div class="gallery3">
+  <a target="_blank" href="https://www.franchiseindia.com/education/skills-universities-the-government-of-indias-initiative-towards-a-skilled-india.11808">
+    <img src="image1.jpeg" alt="Click Here" >
+  </a>
+  <div class="top-left">Skill Development<p>Govt. of India proposes Skills Universities</p>By Sneha Santra</div>
+</div>
+
+<div class="gallery3">
+  <a target="_blank" href="https://www.franchiseindia.com/wellness/this-is-how-salon-business-franchisors-are-generating-job-opportunities.11807">
+    <img src="image2.jpeg" alt="Click Here">
+  </a>
+  <div class="top-left"> Salon Business<p>Capable of Enhancing Natural Beauty</p>By Shahram Warsi</div>
+</div>
+
+<div class="gallery3">
+  <a target="_blank" href="https://www.franchiseindia.com/restaurant/how-monginis-is-restructuring-the-cake-segment-in-india.11805">
+    <img src="image3.jpeg" alt="Click Here">
+  </a>
+  <div class="top-left"> Franchise World<p>Recreating The Bakery Space</p>By Reetika Bose</div>
+</div>
+
+<div class="gallery3">
+  <a target="_blank" href="https://www.franchiseindia.com/wellness/ahh-is-cashing-in-the-booming-ivf-industry-by-acquiring-nova-ivi.11804">
+    <img src="image4.jpeg" alt="Click Here">
+  </a>
+  <div class="top-left">IVF<p>AHH To Acquire Nova IVI</p>By Sneha Santra</div>
+</div>
+
+<div class="gallery3">
+  <a target="_blank" href="https://www.franchiseindia.com/education/educators-shift-your-focus-towards-these-untapped-education-segments.11803">
+    <img src="image5.jpeg" alt="Click Here">
+  </a>
+  <div class="top-left">K12 Education<p>The Ever-Transforming Education Biz</p>By Shahram Warsi</div>
+</div>
+
+<div class="gallery3">
+  <a target="_blank" href="https://www.franchiseindia.com/content/take-your-online-business-to-the-next-level-with-these-growth-hacks.11802">
+    <img src="image6.jpeg" alt="Click Here">
+  </a>
+  <div class="top-left">Online Business<p>Easy Growth Hacks For Online Businesses</p>By Sneha Santra</div>
+</div>
+
+<div class="gallery3">
+  <a target="_blank" href="https://www.franchiseindia.com/content/this-is-how-beer-franchisors-can-contribute-to-the-transforming-beer-industry.11801">
+    <img src="image7.jpeg" alt="Click Here">
+  </a>
+  <div class="top-left">Beer Industry<p>Factors Influencing the Indian Beer Business</p>By Shahram Warsi</div>
+</div>
+
+<div class="gallery3">
+  <a target="_blank" href="https://www.franchiseindia.com/restaurant/how-this-guy-is-conceptualising-with-contemporary-and-freshly-brewed-beers.11800">
+    <img src="image8.jpeg" alt="Click Here">
+  </a>
+  <div class="top-left">StartUp<p>Playing the Brewing Business Right</p>By Reetika Bose</div>
+</div>
+
+<div class="gallery3">
+  <a target="_blank" href="https://www.franchiseindia.com/restaurant/cal-27-at-taj-bengal-is-creating-a-stylized-fine-dining-experience.11799">
+    <img src="image9.jpeg" alt="Click Here">
+  </a>
+  <div class="top-left">Store Launch<p>Cal 27 Infuses Culinary Culture of Kolkata</p>By Nusra</div>
+</div>
+
+<div class="gallery3">
+  <a target="_blank" href="https://www.franchiseindia.com/content/Healthcare-sector">
+    <img src="image10.jpeg" alt="Click Here">
+  </a>
+  <div class="top-left">HealthCare Sector<p>Challenges and Opportunities in HealthCare</p>By Shahram Warsi</div>
+</div>
+
+<div class="gallery3">
+  <a target="_blank" href=https://www.franchiseindia.com/education/this-is-why-educators-should-offer-practical-education-on-tourism-industry.11814>
+    <img src="image11.jpeg" alt="Click Here">
+  </a>
+  <div class="top-left">Education Blog<p>3 Benefits of Practical Education</p>By Shahram Warsi</div>
+</div>
+
+<div class="gallery3">
+  <a target="_blank" href="https://www.franchiseindia.com/content/why-opt-for-a-confectionery-franchise.11819">
+    <img src="image12.jpeg" alt="Click Here">
+  </a>
+  <div class="top-left">Confectionery<p>Franchising in a Chocolatey Way</p>By Smita Nag</div>
+</div>
+
+<a href="https://www.franchiseindia.com/content">View All></a>
+<br><br><br><br><br><br><br>
+<hr>
+<a href="https://products.office.com/en-in/business/microsoft-kaizala?OCID=AID737941_OLA_21686875_229116144_105970022"><img src="microsoft.jpg"></a>
+<hr>
+
+<p>Franchiseindia.com is world's # 1 franchise website and an Entrepreneur's daily dose. Under the aegis of Franchise India Holdings Ltd - Asia's largest integrated franchise solutions company, the website provides every minute detail to entrepreneurs on aspects of franchising, franchise opportunities, business opportunities, partnerships, dealers, manufacturing, distribution, retail and much more. Being the world leaders in franchising, investors and franchisors can always count on Franchiseindia.com for rich, competent and millions of fruitful leads and sales. The website is the favourite destination for franchisors, start-ups, franchisees, dealers, distributors, retailers and franchise prospect seekers.</p>
+
+<div class="dropdown">
+  <span>View Full</span>
+  <div class="dropdown-content">
+    <p>Franchiseindia.com has unique business opportunities in Premium, Domestic and International domain. For our readers who seek opportunities, we have segregated various spectrum of sections like What's New for Industry articles and stories, Interviews section for Company/People profile and the news section which offers a daily dose of what's happening in franchising across the world. </p>
+
+<p>Our investors and opportunity seekers even get an opportunity to get featured in the weekly Franchiseindia.com newsletter that goes straight into the inbox of thousands of brands & investors. Franchiseindia.com also provides a chance to promote the brand directly on the social network websites like Twitter, Facebook, LinkedIn, and more. </p>
+
+<p>Here's why your brand should be there on Franchiseindia.com</p>
+
+<p>Besides, the abundance of business and franchise opportunities, Franchiseindia.com also has regular updates of the upcoming events in the franchise industry like India's largest franchise show, FRO (National Franchise Retail and SME show), BOS (Business Opportunity Shows) and also all the franchise and retail award shows by Franchise India.</p>
+<p>Visitors can start a new business by just registering on the website and that too for FREE. Franchiseindia.com users can browse through thousands of brands and choose the ideal opportunity.</p>
+<p>Franchiseindia.com also updates you with a stable stream of inward traffic and visitors on the website.</p>
+<p>Advertisers can also take benefits of the books and reports on Franchise India by clicking on the Bookstore section.</p>
+  </div>
+</div>
+<hr>
+
+
+
+
+<ul>
+  <li><a class="active" href="https://www.franchiseindia.com/business-opportunities/automotive.m8">Automotive</a></li>
+  <li><a href="https://www.franchiseindia.com/business-opportunities/beauty-and-health.m1">Beauty & Health</a></li>
+  <li><a href="https://www.franchiseindia.com/business-opportunities/education.m3">Education</a></li>
+  <li><a href="https://www.franchiseindia.com/business-opportunities/automobile-related.sc344">Automobile</a></li>
+  <li><a href="https://www.franchiseindia.com/business-opportunities/beauty-salons-and-supplies.sc13">Beauty Supplies</a></li>
+  <li><a href="https://www.franchiseindia.com/business-opportunities/coaching-and-tutoring.sc19">Coaching</a></li>
+  <li><a href="https://www.franchiseindia.com/business-opportunities/four-wheeler.sc342">FourWheeler</a></li>
+  <li><a href="https://www.franchiseindia.com/business-opportunities/foreign-exchange.sc14">HealthCare</a></li>
+<li><a href="https://www.franchiseindia.com/business-opportunities/higher-education.sc20">HigherEducation</a></li>
+<li><a href="https://www.franchiseindia.com/business-opportunities/heavy-moving-vehicles.sc343">HeavyVehicles</a></li>
+<li><a href="https://www.franchiseindia.com/business-opportunities/wellness.sc538">Wellness</a></li>
+<li><a href="https://www.franchiseindia.com/business-opportunities/online-education.sc22">OnlineEducation</a></li> 
+<li><a href="https://www.franchiseindia.com/business-opportunities/automotive.m8">View All></a></li>
+<li><a href="https://www.franchiseindia.com/business-opportunities/beauty-and-health.m1">View All></a></li>
+<li><a href="https://www.franchiseindia.com/business-opportunities/business-services.m6">View All></a></li> 
+<br>
+<li><a class="active" href="https://www.franchiseindia.com/business-opportunities/business-services.m6">Business Services</a></li>
+  <li><a href="https://www.franchiseindia.com/business-opportunities/dealers-and-distributors.m5">Dealers</a></li>
+  <li><a href="https://www.franchiseindia.com/business-opportunities/fashion.m10">Fashion</a></li>
+  <li><a href="https://www.franchiseindia.com/business-opportunities/advertisement-and-media-services.sc23">Media</a></li>
+  <li><a href="https://www.franchiseindia.com/business-opportunities/automobile.sc443">Automobile</a></li>
+  <li><a href="https://www.franchiseindia.com/business-opportunities/accessories.sc44">Accessories</a></li>
+  <li><a href="https://www.franchiseindia.com/business-opportunities/consultancy.sc31">Consultancy</a></li>
+  <li><a href="https://www.franchiseindia.com/business-opportunities/fmcg.sc476">FMCG</a></li>
+<li><a href="https://www.franchiseindia.com/business-opportunities/clothing.sc40">Clothing</a></li>
+<li><a href="https://www.franchiseindia.com/business-opportunities/it-services.sc26">It Services</a></li>
+<li><a href="https://www.franchiseindia.com/business-opportunities/office-supplies.sc478">Office Supplies</a></li>
+<li><a href="https://www.franchiseindia.com/business-opportunities/footwear.sc41">Footwear</a></li> 
+<li><a href="https://www.franchiseindia.com/business-opportunities/business-services.m6">View All></a></li>
+<li><a href="https://www.franchiseindia.com/business-opportunities/dealers-and-distributors.m5">View All></a></li>
+<li><a href="https://www.franchiseindia.com/business-opportunities/fashion.m10">View All></a></li>
+<li><a class="active" href="https://www.franchiseindia.com/business-opportunities/food-and-beverage.m2">Food&Beverage</a></li>
+  <li><a href="https://www.franchiseindia.com/business-opportunities/home-based-businesses.m7">HomeBusiness</a></li>
+  <li><a href="https://www.franchiseindia.com/business-opportunities/hotels-travel-and-tourism.m263">Travelling</a></li>
+  <li><a href="https://www.franchiseindia.com/business-opportunities/bakery-sweets-and-ice-cream.sc424">Bakery</a></li>
+  <li><a href="https://www.franchiseindia.com/business-opportunities/beauty-and-fitness.sc276">Fitness&Beauty</a></li>
+  <li><a href="https://www.franchiseindia.com/business-opportunities/hotels-and-resorts.sc15">Resorts</a></li>
+  <li><a href="https://www.franchiseindia.com/business-opportunities/food-and-beverage-sub.sc16">F & B</a></li>
+  <li><a href="https://www.franchiseindia.com/business-opportunities/home-care-services.sc275">HomeCare</a></li>
+<li><a href="https://www.franchiseindia.com/business-opportunities/taxi-and-rental.sc379">Taxi&Rental</a></li>
+<li><a href="https://www.franchiseindia.com/business-opportunities/restaurant-and-night-clubs.sc423">Restaurant</a></li>
+<li><a href="https://www.franchiseindia.com/business-opportunities/home-based-tutoring.sc279">HomeTutoring</a></li>
+<li><a href="https://www.franchiseindia.com/business-opportunities/tourism-services.sc380">Tourism</a></li> 
+<li><a href="https://www.franchiseindia.com/business-opportunities/food-and-beverage.m2">View All></a></li>
+<li><a href="https://www.franchiseindia.com/business-opportunities/home-based-businesses.m7">View All></a></li>
+<li><a href="https://www.franchiseindia.com/business-opportunities/hotels-travel-and-tourism.m263">View All></a></li>
+
+  <li><a class="active" href="https://www.franchiseindia.com/business-opportunities/industrial-machinery-and-manufacturing.m573">Machinery</a></li>
+  <li><a href="https://www.franchiseindia.com/business-opportunities/retail.m9">Retail</a></li>
+  <li><a href="https://www.franchiseindia.com/business-opportunities/sports-fitness-and-entertainment.m11">Sports&Entertainment</a></li>
+  <li><a href="https://www.franchiseindia.com/business-opportunities/cnc-machinery-lathe-and-tools.sc585">Tools</a></li>
+  <li><a href="https://www.franchiseindia.com/business-opportunities/books-toys-and-gifts.sc36">Books&Toys</a></li>
+  <li><a href="https://www.franchiseindia.com/business-opportunities/entertainment-and-leisure.sc45">Leisure</a></li>
+  <li><a href="https://www.franchiseindia.com/business-opportunities/construction-machinery.sc590">Construction</a></li>
+<li><a href="https://www.franchiseindia.com/business-opportunities/fashion.sc556">Fashion</a></li>
+<li><a href="https://www.franchiseindia.com/business-opportunities/sports-goods-and-fitness-stores.sc37">Sports Goods</a></li>
+<li><a href="https://www.franchiseindia.com/business-opportunities/cranes.sc575">Cranes</a></li>
+<li><a href="https://www.franchiseindia.com/business-opportunities/e-retail.sc39">E-Retail</a></li>
+<li><a href="https://www.franchiseindia.com/business-opportunities/sports-goods-and-fitness-stores.sc37">Fitness Goods</a></li> 
+<li><a href="https://www.franchiseindia.com/business-opportunities/industrial-machinery-and-manufacturing.m573">View All></a></li>
+<li><a href="https://www.franchiseindia.com/business-opportunities/retail.m9">View All></a></li>
+<li><a href="https://www.franchiseindia.com/business-opportunities/sports-fitness-and-entertainment.m11">View All></a></li>  
+</ul>
+<br><br><br><br><br><br>
+
+<div class="email">
+<h5>Newsletter Signup</h5>
+
+  E-mail: <input type="email" name="emailaddress">
+   <a href="https://news.franchiseindia.com/">SignUp</a>
+</div>
+<ul>
+<h3>Browse By Location</h3>
+  <li><a class="active" href="https://www.franchiseindia.com/business-opportunities/maharashtra.LOC18">Maharasthra</a></li>
+  <li><a href="https://www.franchiseindia.com/business-opportunities/delhi.LOC23">Delhi</a></li>
+  <li><a href="https://www.franchiseindia.com/business-opportunities/karnataka.LOC14">Karnataka</a></li>
+  <li><a href="https://www.franchiseindia.com/business-opportunities/tamilnadu.LOC29">Tamil Nadu</a></li>
+  <li><a href="https://www.franchiseindia.com/business-opportunities/west-bengal.LOC33">West Bengal</a></li>
+  <li><a href="https://www.franchiseindia.com/business-opportunities/gujarat.LOC9">Gujarat</a></li>
+  <li><a href="https://www.franchiseindia.com/business-opportunities/uttar-pradesh.LOC32">Uttar Pradesh</a></li>
+  <li><a href="https://www.franchiseindia.com/business-opportunities/madhya-pradesh.LOC17">Madhya Pradesh</a></li>
+ <li><a href="https://www.franchiseindia.com/business-opportunities/haryana.LOC10">Haryana</a></li>
+<li><a href="https://www.franchiseindia.com/business-opportunities/rajasthan.LOC27">Rajasthan</a></li>
+<li><a href="https://www.franchiseindia.com/business-opportunities/andhra-pradesh.LOC1">Andhra Pradesh</a></li>
+<li><a href="https://www.franchiseindia.com/business-opportunities/kerala.LOC15">Kerala</a></li>
+<li><a href="https://www.franchiseindia.com/business-opportunities/punjab.LOC26">Punjab</a></li>
+<li><a href="https://www.franchiseindia.com/business-opportunities/chandigarh.LOC5">Chandigarh</a></li>
+</ul>
+
+
+
+<ul>
+<h3>Our Group Sites</h3>
+  <li><a class="active" href="https://www.entrepreneur.com/">entreprenuer.com</a></li>
+  <li><a href="https://www.menshealthindia.com/">menshealthindia.com</a></li>
+  <li><a href="https://www.indianretailer.com/">indianretailer.com</a></li>
+  <li><a href="https://www.franchiseindia.com/restaurant/">restaurantindia.in</a></li>
+  <li><a href="https://www.franchiseindia.com/wellness/">wellnessindia.com</a></li>
+  <li><a href="https://www.franchiseindia.com/education/">educationbiz.com</a></li>
+  <li><a href="https://www.franchise.ae/">franchise.ae</a></li>
+  <li><a href="https://www.franchisebangladesh.com/">franchisebangladesh.com</a></li>
+ <li><a href="https://www.businessex.com/">businessex.com</a></li>
+<li><a href="https://www.licenseindia.com/">licenseindia.com</a></li>
+<li><a href="https://www.bradfordlicenseindia.com/">bradfordlicenseindia.com</a></li>
+<li><a href="https://www.franchiseindia.net/">franchiseindia.net</a></li>
+<li><a href="https://www.franchiseindia.in/">franchiseindia.in</a></li>
+<li><a href="https://www.francorp.in/">francorp.in</a></li>
+<li><a href="https://www.franglobal.com/">franglobal.com</a></li>
+<li><a href="http://www.franchiseindiaventures.com/">franchiseindiaventures.com</a></li>
+<li><a href="https://www.gauravmarya.com/">gauravmarya.com</a></li>
+</ul>
+  <div class="gallery">
+<h5>Supported By</h5>
+  <a target="_blank" href="https://www.franchiseindia.com/brands/Ferns-N-Petals.28">
+    <img src="ifa.png"> </a><br>
+</div> 
+
+<div class="gallery1">
+<h4>India's No.1 Franchise Magazine</h4>
+  <a target="_blank" href="https://master.franchiseindia.com/emagazine/shop/products/view/id/1">
+    <img src="magnew.jpg"> </a><br><br><br><br><br>
+ <a href="https://master.franchiseindia.com/emagazine/shop/products/view/id/1">Subscribe Now</a>
+</div> 
+
+<div class="gallery2">
+<h4>Social Media</h4>
+  <a target="_blank" href="https://www.facebook.com/FranchiseIndiaNews">
+    <img src="fb.jpg"> </a><br>
+<a target="_blank" href="https://twitter.com/FranchiseIndia">
+    <img src="t.jpg"> </a><br>
+<a target="_blank" href="https://www.linkedin.com/company/franchise-india-holdings-limited?trk=tyah">
+    <img src="link.jpg"> </a><br>
+<a target="_blank" href="https://www.youtube.com/user/FranchiseIndia">
+    <img src="youtube.jpg"> </a><br>
+ 
+</div> 
+
+<ul>
+  <li><a class="active" href="">Home</a></li>
+  <li><a href="aboutus.html">About Us</a></li>
+  <li><a href="contactus.html">Contact Us</a></li>
+  <li><a href="feedback.html">Feedback</a></li>
+  <li><a href="https://news.franchiseindia.com/">News</a></li>
+  <li><a href="testinomials.html">Testinomials</a></li>
+  <li><a href="terms.html">Terms</a></li>
+  <li><a href="https://www.franchiseindia.com/sitemap">Sitemap</a></li>
+ 
+</ul>
+
+
+
+<br><br><br><br><br>
+<hr>
+<h4><p>Copyright © 2009 - 2018 Franchise India Holdings Ltd.</p><p>The information contained herein is of generic nature only, and Franchise India is not, by means of this website or any part thereof, rendering professional advice or services. Before making any decision or taking any action that might affect your finances or business, you should consult a qualified professional advisor. Your use of this website or any of its pages or links given, is at your own risk and you assume full responsibility and risk of loss resulting from your usage. With respect to use of the website, kindly visit www.franchiseindia.com/terms.</p></h4><br><br><br>
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<br><br><br>
+<button class="open-button" onclick="openForm()">Leave A Message</button>
+
+<div class="chat-popup" id="myForm">
+  <form action="feedback1.html" class="form-container">
+  
+
+ <label for="ne"><b>Name , Email</b></label>
+    <textarea placeholder="Type your name and email" name="ne" required></textarea>
+    <label for="msg"><b>Message</b></label>
+    <textarea placeholder="Type message.." name="msg" required></textarea>
+
+    <button type="submit" class="btn">Send</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>
+
+</body>
+</html>
+

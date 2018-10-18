@@ -1,0 +1,243 @@
+<html lang="en">
+<head>
+<style>
+#success_message{diplay:none;}
+</style>
+<script>
+  $(document).ready(function() {
+    $('#contact_form').bootstrapValidator({
+        // To use feedback icons, ensure that you use Bootstrap v3.1.0 or later
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            first_name: {
+                validators: {
+                        stringLength: {
+                        min: 2,
+                    },
+                        notEmpty: {
+                        message: 'Please enter your First Name'
+                    }
+                }
+            },
+             last_name: {
+                validators: {
+                     stringLength: {
+                        min: 2,
+                    },
+                    notEmpty: {
+                        message: 'Please enter your Last Name'
+                    }
+                }
+            },
+			 user_name: {
+                validators: {
+                     stringLength: {
+                        min: 8,
+                    },
+                    notEmpty: {
+                        message: 'Please enter your Username'
+                    }
+                }
+            },
+			 user_password: {
+                validators: {
+                     stringLength: {
+                        min: 8,
+                    },
+                    notEmpty: {
+                        message: 'Please enter your Password'
+                    }
+                }
+            },
+			confirm_password: {
+                validators: {
+                     stringLength: {
+                        min: 8,
+                    },
+                    notEmpty: {
+                        message: 'Please confirm your Password'
+                    }
+                }
+            },
+            email: {
+                validators: {
+                    notEmpty: {
+                        message: 'Please enter your Email Address'
+                    },
+                    emailAddress: {
+                        message: 'Please enter a valid Email Address'
+                    }
+                }
+            },
+            contact_no: {
+                validators: {
+                  stringLength: {
+                        min: 12, 
+                        max: 12,
+                    notEmpty: {
+                        message: 'Please enter your Contact No.'
+                     }
+                }
+            },
+			 department: {
+                validators: {
+                    notEmpty: {
+                        message: 'Please select your Department/Office'
+                    }
+                }
+            },
+                }
+            }
+        })
+        .on('success.form.bv', function(e) {
+            $('#success_message').slideDown({ opacity: "show" }, "slow") // Do something ...
+                $('#contact_form').data('bootstrapValidator').resetForm();
+
+            // Prevent form submission
+            e.preventDefault();
+
+            // Get the form instance
+            var $form = $(e.target);
+
+            // Get the BootstrapValidator instance
+            var bv = $form.data('bootstrapValidator');
+
+            // Use Ajax to submit form data
+            $.post($form.attr('action'), $form.serialize(), function(result) {
+                console.log(result);
+            }, 'json');
+        });
+});
+</script>
+  <title>View Contact</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="contanier">
+<center><pre style="font-family:ShowCard Gothic;font-size:30px">
+ YOU HAVE REQUESTED FOR THIS INFORMATION 
+                                                       
+</pre></center>
+
+<form class="well form-horizontal" action="" method="post" id="contact_form">
+
+<fieldset>
+
+<div class="form-group">
+
+<label class="col-lg-4 control-label"><b>NAME</b></label>
+
+<div class="col-lg-4 inputGroupContainer">
+<div class="input-group">
+<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+<input name="first_name" placeholder="Name" class="form-control" type="text" required></input>
+</div>
+</div>
+</div>
+
+<div class="form-group">
+
+<label class="col-lg-4 control-label"><b>E-MAIL</b></label>
+
+<div class="col-lg-4 inputGroupContainer">
+<div class="input-group">
+<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+<input name="email" placeholder="E-Mail Address" class="form-control" type="text" required></input>
+</div>
+</div>
+</div>
+<div class="form-group">
+<label class="col-lg-4 control-label"><b>CONTACT NO.</b></label>
+
+<div class="col-lg-4 inputGroupContainer">
+<div class="input-group">
+<span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+<input name="contact.no" placeholder="contact no." class="form-control" type="text" required></input>
+</div>
+</div>
+</div>
+
+<div class="form-group">
+
+<label class="col-lg-4 control-label"><b>SELECT STATE</b></label>
+
+<div class="col-lg-4 SELECTContainer">
+<div class="input-group">
+<span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+<select name="department" class="form-control selectpicker" required>
+<option value="">select your state</option> 
+<option value="">Andra Pradesh</option>
+<option value="">Arunachal Pradesh</option>
+<option value="">Assam</option>
+<option value="">Bihar</option>
+<option value="">Chattisgarh</option>
+<option value="">Goa</option>
+<option value="">Gujarat</option>
+<option value="">Harayan</option>
+<option value="">Himachal Pradesh</option>
+<option value="">Jammu & Kahmir</option>
+<option value="">Jharkhand</option>
+<option value="">Karnataka</option>
+<option value="">Kerala</option>
+<option value="">Madhya Pradesh</option>
+<option value="">Maharashtra</option>
+<option value="">Manipur</option>
+<option value="">Meghalaya</option>
+<option value="">Mizoram</option>
+<option value="">Nagaland</option>
+<option value="">Orissa</option>
+<option value="">Punjab</option>
+<option value="">Rajisthan</option>
+<option value="">Sikkim</option>
+<option value="">Tamil Nadu</option>
+<option value="">Telagana</option>
+<option value="">Tripura</option>
+<option value="">Uttaranchal</option>
+<option value="">Utthar Pradesh</option>
+<option value="">West Bengal</option>
+</select>
+</div>
+</div>
+</div>
+
+
+<div class="form-group">
+<label class="col-lg-4 control-label"><b>ADDRESS</b></label>
+
+<div class="col-lg-4 inputGroupContainer">
+<div class="input-group">
+<span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+<input name="address" placeholder="Enter Address" class="form-control" type="text" required></input>
+</div>
+</div>
+</div>
+  <div class="form-group">      
+      <div class="col-sm-offset-2 col-sm-10">
+        <div class="checkbox">
+   <center>
+       <label><input type="checkbox" name="remember" required>  Yes, i want to subscribe for weekly Newsletter</label>
+     </center>   </div>
+      </div>
+    </div>
+
+</fieldset>
+</form>
+</div>
+<br>
+</div>
+<center>
+
+<form action="congratulations.html"><center><input type="submit" value="Submit"></center>
+</form>
+
+</center>
+</body>
+</html>

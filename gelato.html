@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Gelato Vinto Chain Creator</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="webpage_project.css">
+<style>
+#tabl {
+    border-collapse: separate;
+    border-spacing: 15px;
+}
+table, th, td {
+    border: 1px solid Lavender;
+    padding: 2px;
+   height:"100%";
+    
+}
+
+.h{
+  background-color: #f1f1f1;
+  width: 15%;
+  height: auto;
+}
+
+.header {
+  overflow: hidden;
+  background-color: #f1f1f1;
+  padding: 20px 10px;
+  height:250px;
+}
+
+.header a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px; 
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+
+
+.header a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.header a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+.header-right {
+  float: right;
+}
+
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .header-right {
+    float: none;
+  }
+}
+A {text-decoration: none;} 
+  table, th, td {
+    border: 1px solid Lavender;
+   padding:2px;
+   height:"100%";
+    
+}
+
+/*from here*/
+
+/*css for sidenavbar*/
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+/*css for buttons*/
+
+.button {
+  border-radius: 4px;
+  background-color: lavender;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.dropbtn {
+    background-color: #3498DB;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #2980B9;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
+
+
+.dropbtnrt {
+    background-color:#3498DB;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtnrt:hover, .dropbtnrt:focus {
+    background-color: #3e8e41;
+}
+
+.dropdownrt {
+    /*float: right;*/
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-contentrt {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    right: 0;
+    z-index: 1;
+}
+
+.dropdown-contentrt a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdownrt a:hover {background-color: #ddd;}
+
+.show {display: block;}
+
+.dropbtn {
+    background-color: grey;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+
+</style>
+</head>
+
+
+<div class="header">
+<div>
+<img  class="logo" src="chain2.png" width="350px" height="150px" border="none">
+
+ <strong><font color="SaddleBrown" ><h1 style="font-family: Georgia;font-size: 30px;font-style: bold; float: right;">
+CHAIN CREATOR</h1></font></div></strong>
+<br><br>
+  <div class="header-right">
+    
+    <a  href="franchiseinsights.html">Franchise Insights</a>
+    <a href="news.html">News</a>
+    <a href="prolav.html">Videos</a>
+    <a href="https://www.businessex.com/">BusinessEx</a>
+    <a href = "https://www.licenseindia.com/">Lisencse India</a>
+     <a href="register.html ">Register</a>
+    <a href="login.html">Log in</a>
+   
+    <a href = "subscribe.html">Subscribe</a></div></div>
+</tr>
+
+<hr>
+
+<body style="height:1500px">
+  <nav class="navbar navbar-inverse">
+  
+    <ul class="nav navbar-nav">
+     
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Open <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+       <li>   <a href="automotive.html ">Automotive</a></li>
+  <li><a href=" beauty.html">Beauty and health</a></li>
+  <li><a href="business.html ">Business services</a></li>
+  <li><a href="dealors.html">Dealors and distributors</a></li>
+  <li><a href="education.html">Education</a></li>
+  <li><a href=" fashion.html">Fashion</a></li>
+  <li><a href="food.html">Food and beverage</a></li>
+  
+  <li><a href="home.html">Home based Businesses</a></li>
+  <li><a href="hotels.html ">Hotel,travel&tourism</a></li>
+  <li><a href="industry.html ">Industrial machinery</a></li>
+  <li><a href="retail.html ">Retail</a></li>
+  <li><a href="sports.html">Sports,Fitness amd Entertainment</a></li>
+        </ul>
+      </li>
+      <li><a href="#business">BUSINESS</a></li>
+      <li><a href="#investment" >INVESTMENT</a></li>
+      <li><a href="#property">PROPERTY</a></li>
+      <li><a href="#training">TRAINING</a></li>
+      <li><a href="#agree">AGREEMENT DETAILS</a></li>
+</ul>
+    <ul class="nav navbar-nav navbar-right">
+  <form action="form.html">
+      <button type="submit" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">VIEW CONTACT</button>
+  </form>  
+</ul>
+    </ul>
+  
+  </div>
+</nav>
+
+
+
+<table cellspacing="10" cellpadding="10">
+  <tr>
+<td>
+    <th ><img src="gelato.gif"  ></th></td>
+<td>
+
+<b><h1>
+
+GELATO VINTO<br>
+Ice creams and yogurt parcels</h1></b>
+
+<td>
+
+
+  </tr>
+</table>
+<br><br>
+
+<!-- tab -->
+<center>
+  <table style="width:80% ;bg-color:grey" id="areatab">
+  <tr>
+    <th>AREA REQ<br>50 - 300 Sq.ft</th>
+    <th>INVESTMENT RANGE<br>INR 5 Lac - 10 Lac</th> 
+    <th>FRANCHISE OUTLETS<br>30</th>
+  </tr>
+ 
+</table>
+  
+</center>
+
+<br><br>
+
+
+<!-- content -->
+<div style="border:1px solid Lavender;width:75%;height:500px;overflow:scroll;overflow-y:scroll;overflow-x:hidden;">
+<p id="bus" ><a name="business" style="font-size: 30px; font-family: cursive; color: #082A67">BUSINESS DETAILS<hr></a>
+<b><h4><center>Want to enhance the joy of eating by creating a 100 % natural and vegetarian frozen dessert? Tie up with Gelato Vinto now!</center></b></h4>
+<h4>About Us:</h4>
+
+Gelato Vinto is a fresh, innovative concept-not just for customers but also for the franchisees and business partners. Gelato is the generic word for frozen dessert in Italian. Though made from the same ingredients as frozen dessert, a taste of this Italian marvel will reveal that gelato and frozen dessert are distinctively different. <br><br>
+
+<b><h4>Why choose Gelato Vinto?</h4></b><br>
+<ul>
+<li>In the already immense retail ice cream market, it brings a new exciting approach in an underrepresented sector.</li>
+<li>An efficient business model supported by marketing and merchandising tools and established operating procedures that make the running of outlets relatively simple.</li>
+<li>Minimum Risk</li>
+<li>Reasonable returns on investment</li>
+<li>High Market Demand</li>
+</ul>
+<b><h4>Franchise Facts:</h4></b><br>
+<ul>
+<li>Area required: 50-300 sq. ft.</li>
+<li>Investment: Rs. 5lac - Rs. 10lac</li>
+</ul>
+<b><h4>Benefits & Support to Franchisee:</h4></b><br>
+<ul>
+<li>Support in Store design, Store construction</li>
+<li>Business development i.e. site selection support</li>
+<li>Operational support</li>
+<li>Technical know-how and support is given to franchisee during the duration of the agreement</li>
+<li>Marketing support</li>
+<li>Training is provided to all crew members and franchisees</li>
+<li>The gelato is supplied by the franchisor to the franchisee at a cost that is the MRP less a certain percentage which works as a healthy and profitable margin for the franchisee</li>
+<li>The gelato will be transported to the franchisee’s outlet by the franchisor at his own cost</li>
+</ul>
+<b>“So if you want to provide absolute consumer delight through creative & passionate service in a hygienic environment, then grab the above business opportunity as quick as possible. Please contact us for more details.”</b>
+</p>
+</div>
+
+
+<br><br>
+<div class="tab">
+  <a name="investment"></a>
+<table style="width:75%" cellpadding="5" cellspacing="10" >
+  <tr>
+    <th colspan="2" id="heading" ><b>INVESTMENT DETAILS<hr></b></th>
+  </tr>
+
+  <tr>
+    <th colspan="2" style="font-size: 25px;background-color:#E2ECFE;"><strong>Commenced Operations</strong></th>
+  </tr>
+  <tr>
+    <th >Operations Commenced On</th>
+
+    <td>2005</td>
+  </tr>
+  <tr>
+    <th >Franchising / Distribution Commenced On</th>
+    <td>2009</td>
+
+  </tr>
+<tr>   
+ <th colspan="2" style="font-size: 25px;background-color:#E2ECFE;"><strong>Franchise Details</strong></th>
+</tr>
+ 
+  <tr>
+    <th >Anticipated percentage return on investment</th>
+    <td> 50 %</td>
+  </tr>
+  <tr>
+    <th >Likely pay back period of capital for a unit franchise </th>
+    <td> 1-2 Years</td>
+  </tr>
+    <tr>
+    <th >Other investment requirements</th>
+    <td>No</td>
+  </tr>
+
+
+  </tr>
+
+  <tr>
+<h2> <th colspan="2" style="font-size: 25px;">Units</th></h2>
+  
+  <tr>
+    <th >Investment INR 
+
+ </th>
+    <td>INR 5lac - 10lac</td>
+
+  </tr>
+  <tr>
+    <th >Franchise/Brand Fee INR</th>
+    <td>INR 300000</td>
+  </tr>
+    <tr>
+    <th >Royalty Commision</th>
+    <td>None %</td>
+  </tr>
+
+</table>
+
+  </center>
+</tr>
+<table style="width: 75%;" cellspacing="10" cellpadding="5" id="t1">
+  <tr >
+    <th  style="font-size: 20px;"><strong>Expansion Locations</strong></th>
+  </tr>
+ 
+<tr>
+  <td>
+  <table style="width:200px;height: 200px" >
+  <tr style="background-color:#E2ECFE">
+    <th  style="font-size: 20px;"><strong>NORTH</strong></th>
+  </tr>
+  <tr>
+    <td id="data">Delhi, Haryana, Himachal Pradesh, Jammu and Kashmir, Punjab, Uttaranchal, Uttar Pradesh</td> 
+  </tr>
+</table>
+</td>
+<td>
+<table style="width:200px;height: 200px" >
+  <tr style="background-color:#E2ECFE">
+    <th  style="font-size: 20px;"><strong>SOUTH</strong></th>
+  </tr>
+  <tr>
+    <td id="data">Kerala, Karnataka, Tamil Nadu, Andhra Pradesh, Telangana</td> 
+</tr>
+
+</table>
+</td>
+<td>
+<table style="width:200px;height: 200px" >
+  <tr style="background-color:#E2ECFE">
+    <th style="font-size: 20px;"><strong>EAST</strong></th>
+  </tr>
+<tr>
+    <td id="data">Assam, Meghalaya, Mizoram, Tripura, Arunachal Pradesh, Manipur, Nagaland, West Bengal, Sikkim, Odisha</td> 
+</tr>
+</table>
+</td>
+
+</tr>
+<tr>
+  <td>
+  <table style="width:200px;height: 200px" >
+  <tr style="background-color:#E2ECFE">
+    <th style="font-size: 20px;"><strong>WEST</strong></th>
+  </tr>
+  <tr>
+    <td id="data">Gujarat, Rajasthan, Maharashtra, Goa</td> 
+  </tr>
+</table>
+</td>
+<td>
+<table style="width:200px;height: 200px">
+  <tr style="background-color:#E2ECFE">
+    <th  style="font-size: 20px;"><strong>CENTRAL</strong></th>
+  </tr>
+  <tr>
+    <td id="data">Chhattisgarh, Madhya Pradesh, Bihar, Jharkhand</td> 
+</tr>
+</table>
+</td>
+<td>
+<table style="width:200px;height: 200px" >
+  <tr style="background-color:#E2ECFE">
+    <th style="font-size: 20px;"><strong>UNION TERRITORIES</strong></th>
+  </tr>
+<tr>
+    <td id="data">Andaman and Nicobar, Pondicherry, Chandigarh, Lakshadweep, Daman and Diu</td> 
+</tr>
+
+</td>
+
+</tr>
+</table>
+
+</table>
+</center>
+
+<br><br>
+ <a name="property"></a>
+    <table style="width:75%" cellpadding="5" cellspacing="5">
+  <tr>
+    <th colspan="2" id="heading"><b>PROPERTY DETAILS</b><hr></th>
+    
+  </tr>
+  <tr>
+    <th >Type of property required for this franchise opportunity</th>
+    <td>Shops/Kiosk at malls</td>
+  </tr>
+  <tr>
+    <th >Floor area requirement</th>
+    <td>50 - 300 Sq.ft</td>
+  </tr>
+  <tr>
+    <th >Preferred location of unit franchise outlet </th>
+    <td>High Foot fall traffic areas ( Malls & High Street)</td>
+  </tr>
+
+</table>
+
+  <br><br>
+   <a name="training"></a>
+  <table style="width:75%" cellpadding="5" cellspacing="5">
+  <tr>
+    <th colspan="2" id="heading"><b>TRAINING DETAILS</b><hr></th>
+     </tr>
+       </tr>
+  <tr>
+    <th >Detailed operating manuals for franchisees</th>
+    <td>Yes</td>
+  </tr>
+
+    
+  </tr>
+  <tr>
+    <th >Franchisee training location</th>
+    <td>On Site</td>
+  </tr>
+  <tr>
+    <th >Is field assistance available for franchisee ? </th>
+    <td>Yes</td>
+  </tr>
+  <tr>
+    <th >
+Expert guidance from Head Office to franchisee in opening the franchise</th>
+    <td>Yes</td>
+  </tr>
+    <tr>
+    <th >Current IT systems will be included in the franchise</th>
+    <td>Yes</td>
+  </tr>
+
+
+</table>
+<br><br>
+ <a name="agree"></a>
+<table style="width:75%" cellpadding="5" cellspacing="5">
+  <tr>
+    <th colspan="2" id="heading"><b>AGREEMENT & TERM DETAILS</b><hr></th>
+</tr>
+    
+  </tr>
+  <tr>
+    <th >Do you have a standard franchise agreement?</th>
+    <td>Yes</td>
+  </tr>
+  <tr>
+    <th >How long is the franchise term for?</th>
+    <td>5 Years</td>
+  </tr>
+  <tr>
+    <th >Is the term renewable?</th>
+    <td>Yes</td>
+  </tr>
+
+</table>
+
+</div>
+<center>
+  <table>
+    <tr>
+      <th style="padding: 20px">
+<div class="dropdown">
+  <button class="dropbtn" style="width: 200px">Browse by location</button>
+  <div class="dropdown-content">
+    <a class="active" href="https://www.franchiseindia.com/business-opportunities/maharashtra.LOC18">Maharasthra</a></li>
+  <a href="https://www.franchiseindia.com/business-opportunities/delhi.LOC23">Delhi</a></li>
+  <a href="https://www.franchiseindia.com/business-opportunities/karnataka.LOC14">Karnataka</a></li>
+  <a href="https://www.franchiseindia.com/business-opportunities/tamilnadu.LOC29">Tamil Nadu</a></li>
+  <a href="https://www.franchiseindia.com/business-opportunities/west-bengal.LOC33">West Bengal</a></li>
+  <a href="https://www.franchiseindia.com/business-opportunities/gujarat.LOC9">Gujarat</a></li>
+  <a href="https://www.franchiseindia.com/business-opportunities/uttar-pradesh.LOC32">Uttar Pradesh</a></li>
+  <a href="https://www.franchiseindia.com/business-opportunities/madhya-pradesh.LOC17">Madhya Pradesh</a></li>
+ <a href="https://www.franchiseindia.com/business-opportunities/haryana.LOC10">Haryana</a></li>
+<a href="https://www.franchiseindia.com/business-opportunities/rajasthan.LOC27">Rajasthan</a></li>
+<a href="https://www.franchiseindia.com/business-opportunities/andhra-pradesh.LOC1">Andhra Pradesh</a></li>
+<a href="https://www.franchiseindia.com/business-opportunities/kerala.LOC15">Kerala</a></li>
+<a href="https://www.franchiseindia.com/business-opportunities/punjab.LOC26">Punjab</a></li>
+<a href="https://www.franchiseindia.com/business-opportunities/chandigarh.LOC5">Chandigarh</a></li>
+  </div>
+</div>
+</th>
+<br><br>
+<th style="padding: 20px" >
+<div class="dropdown">
+  <button class="dropbtn" style="width: 200px">Our group sites</button>
+  <div class="dropdown-content">
+    <a class="active" href="https://www.entrepreneur.com/">entreprenuer.com</a></li>
+  <a href="https://www.menshealthindia.com/">menshealthindia.com</a></li>
+  <a href="https://www.indianretailer.com/">indianretailer.com</a></li>
+  <a href="https://www.franchiseindia.com/restaurant/">restaurantindia.in</a></li>
+  <a href="https://www.franchiseindia.com/wellness/">wellnessindia.com</a></li>
+  <a href="https://www.franchiseindia.com/education/">educationbiz.com</a></li>
+  <a href="https://www.franchise.ae/">franchise.ae</a></li>
+  <a href="https://www.franchisebangladesh.com/">franchisebangladesh.com</a></li>
+ <a href="https://www.businessex.com/">businessex.com</a></li>
+<a href="https://www.licenseindia.com/">licenseindia.com</a></li>
+<a href="https://www.bradfordlicenseindia.com/">bradfordlicenseindia.com</a></li>
+<a href="https://www.franchiseindia.net/">franchiseindia.net</a></li>
+<a href="https://www.franchiseindia.in/">franchiseindia.in</a></li>
+<a href="https://www.francorp.in/">francorp.in</a></li>
+<a href="https://www.franglobal.com/">franglobal.com</a></li>
+<a href="http://www.franchiseindiaventures.com/">franchiseindiaventures.com</a></li>
+<a href="https://www.gauravmarya.com/">gauravmarya.com</a></li>
+  </div>
+</div>
+</th>
+</tr>
+</table>
+</center>
+<br><br>
+<h2>Social Sites</h2><br>
+<center>
+<div id="social">
+  
+  
+  <a target="body" href="https://twitter.com/FranchiseIndia">
+    <img src="t.jpg" alt="image not found" width="200px">
+  </a>
+  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  <a target="body" href="https://www.facebook.com/FranchiseIndiaNews">
+    <img src="fb.jpg" alt="image not found" width="200px">
+  </a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  <a target="body" href="https://www.linkedin.com/company/franchise-india-holdings-limited?trk=tyah">
+    <img src="link.jpg" alt="image not found" width="200px">
+  </a>
+  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  <a target="body" href="https://www.youtube.com/user/FranchiseIndia">
+    <img src="youtube.jpg" alt="image not found" width="200px">
+
+  </a>
+</div>
+</center>
+<!-- for buttons -->
+
+<br><br>
+<center>
+ <button class="button"><a class="active" href=""><span>Home</span></a></button>
+  <button class="button"><a href="aboutus.html"><span>About Us</span></a></button>
+  <button class="button"><a href="contactus.html"><span>Contact</span></a></button>
+  <button class="button"><a href="feedback.html"><span>Feedback</span></a></button><br>
+  <button class="button"><a href="news.html"><span>News</span></a></button>
+  <button class="button"><a href="testinomials.html"><span>Testinomials</span></a></button>
+  <button class="button"><a href="terms.html"><span>Terms</span></a></button>
+ <button class="button"><a href="https://www.franchiseindia.com/sitemap"><span>Sitemap</span></a></button>
+</center>
+
+</footer>
+
+
+</body>
+</html>

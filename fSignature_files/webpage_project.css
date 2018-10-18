@@ -1,0 +1,138 @@
+body{
+  background-color: white;
+  
+  padding: 30px
+}
+img
+{
+  border: solid 1px white;
+
+  padding:20px;
+  
+}
+h3
+{
+  
+  color: coral;
+  
+  padding: 10px;
+  text-align: center;
+  font-size:15px;
+  box-sizing: border-box;
+  
+} 
+h1{
+  color:#e00d7a;
+  font-style: bold;
+  box-sizing: border-box;
+  border: 2px solid pink;
+  padding: 15px;
+  font-family: cursive;
+}
+
+form{
+  color: coral;z
+  font-style: bold;
+  font-size: 15px;
+
+}
+
+input[type=text],select,textarea
+{
+  width:auto;
+  height:auto;
+  font-style:italic;
+  font-size: 15px;
+  box-sizing: border-box;
+  padding: 5px;
+  width: 100%;
+  border:solid 2px #ffffcc;
+
+}
+
+
+input[type=submit]
+{
+  color:black;
+  width: auto;
+  height:auto;
+  background-color: #66ccff;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+
+/*css for navigation bar*/
+     .container-fluid ul{
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #333;
+
+    }
+    .container-fluid li{
+      float: left;
+      padding: 10px;
+      border-right: 1px solid white;
+      
+      
+    }
+    .container-fluid li a{
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+
+    }
+
+    .container-fluid li a:hover{
+      background-color: #111; 
+    }
+
+#areatab table {
+    border-spacing: 0px;
+}
+ #areatab th{
+  background-color: Lavender;
+  text-align: center;
+  font-size: 25px;
+
+}
+#areatab h2{
+  
+  color:#ff8000;
+  font-style: italic;
+  font-size: 20px;
+  font-family: cursive;
+  text-align: left;
+}
+
+
+
+/*css for tables*/
+.tab table {
+    border: 1px solid black;
+    
+}
+.tab th
+ {
+    padding: 5px;
+    text-align: left; 
+
+}
+.tab td{
+  text-align: right;
+}
+.tab #heading{
+  font-size: 25px;
+  font-family: cursive;
+  font-style: bold;
+  color:#082A67;
+
+}
+.tab #data{
+  text-align: left;
+
+}
